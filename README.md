@@ -66,124 +66,146 @@ Mapping the available data | Detection of Instagram and YouTube profiles
 * Greek non-private profiles
 * Profiles that have uploaded at least one post during 2020
 
->The profiles that would fulfill the above criteria were considered to:
->* have maintained a considerable activity during 2020
->* have been influencing a large proportion of greek social media user
+> The profiles that would fulfill the above criteria were considered to:
+> * have maintained a considerable activity during 2020
+> * have been influencing a large proportion of greek social media user
 
 #### How
-* Manual detection and collection of profile names
-* Creation of a mechanism that would automatically discover new users, moving from one profile to another 
-* Detection of profile names on other corresponding digital sources
+* Manual detection and collection of profile names (Rejected)
+    > Time consuming procedure
+* Creation of a mechanism that would automatically discover new users, moving from one profile to another (Rejected)
+    > * High complexity
+    > * Detection of many "small" profiles, regarding their followers/subscribers, and difiiculty to find more popular profiles
+    > * Strong possibility to find profiles that are not Greek
+* Detection of profile names using other corresponding digital sources (Accepted)
 
-#### Structure
+#### How
+Therefore, the websites mentioned below were utilized:
+* www.starngage.com
+    > Collected the credentials(user_name, user_id) of popular Greek Instagram profiles 
+* www.stats.video
+    > Collected the credentials(channel_name, channel_id) of popular Greek YouTube profiles 
+* www.socialbakers.com
+    > Collected the names of Greek businesses and found their Instagram and/or YouTube profiles
+
+The websites mentioned above provided with arrays that contained information about pouplar Greek content creators and businesses, data that formed the base of our survey.
+
+Mapping the available data | Evaluation of the available for collecting data
 ---------------------------
 
-This web scraper has the basic stracture of a Scrapy spider with the addition of two folders: 
-* the "resources" folder 
-    >created to store files that contain important data for the scraping mechanism, such as names of Instagram profiles.
-* the "tools" folder.
-    >created to store files that contain usually used functions, such as functions that carry out the communication with the database.
+#### Typical structure of an Instagram profile:
+* **User Name**
+* Number of posts
+* **Number of followers**
+* **Number of following**
+* Full Name
+* **Profile Category**
+* **Biography**
+* Instagram Story
+* Highlights
+* **User Posts**
 
-####  Features
------------------------------
+The fields mentioned in **bold** were collected from each Instagram profile.
 
-The provided web scraper reads as input usernames of Instagram users from:
-* a database collection
-* a JSON file 
-    >located in the "resources" folder
+#### Typical structure of an Instagram post:
+* **Caption**
+* **Comments**
+* Share Button
+* Save Buttom
+* **Number of Likes/Video Views**
+* **Uplaod Date**
+* **Mentioned Users**
 
+The fields mentioned in **bold** were collected from each Instagram post.
 
-Due to the fact that this mechanism was created in the context of my thesis, it has a few specific features:
-* it scrapes profiles with a number of followers higher than 1.000 
-* it scrapes profiles that have uploaded at least one post in 2020
-* it scrapes only the posts that were uploaded during the year 2020
-* it is based on the personalised parametrisation of the "settings.py" file, in order to avoid anti-scraping blocking 
-* it works attaching custom request headers to the sent requests, including the Cookies field for each session
-    >All the above parameters can be modified.
+#### Typical structure of a YouTube channel:
+* **Channel Name**
+* **Number of Subscribers**
+* External Links
+* "Home" Page
+* **"Videos" Page**
+* "Playlists" Page
+* "Community" Page
+* "Channels" Page
+* "About" Page
+* **Channel Videos**
+* **Channel ID**
+* **Channel Keywords**
 
+The fields mentioned in **bold** were collected from each Instagram post.
 
-From each profile, the scraping mechanism collects:
-* General Information:
-    * **User Name**
-    * **User ID**
-    * **Account Type/Category**
-    * **Gender**
-        >It was manually populated, beacause Instagram does not provide this field
-    * **Number of followers**
-    * **Number of followings**
-    * **Number of posts**
-    * **Number of videos**
-* Fields of each uploaded post:
-    * **Post ID**
-    * **Post Type** 
-        >Photo, Video or Slideshow
-    * **Upload Date**
-    * **Number of Likes**
-    * **Number of Comments**
-    * **Number of Views**
-        >in case of Video post
-    * **Tagged Users**
-    * **Hashtags**
-* Fields of each slide in a Slideshow:
-    * **Slide ID**
-    * **Slide Type**
-    * **Slide Views**
-        >in case of Video slide
+#### Typical structure of a YouTube video:
+* **Video Title**
+* **Number of Views**
+* **Upload Date**
+* **Number of Likes**
+* **Number of Dislikes**
+* Share Button
+* Save Button
+* Description
+* **Number of Comments**
+* **Duration**
+* **Video Keywords**
+* **Video Category**
+* **Video ID**
 
+The fields mentioned in **bold** were collected from each Instagram post.
 
-The mechanism also calculates additional metrics that help with reflecting the popularity of the collected Instagram profiles and posts:
-* Post level metrics:
-    * **er_view**
-        >(Number of Likes / Number of Views of a video) * 100
-    * **er_post**
-        >(Number of Likes / Number of followers) * 100
-    * **er_comments post**
-        >((Number of Likes + Number of Comments) / Number of followers) * 100
-* Account level metrics:
-    * **avg_likes**
-        >Average number of Likes, based on the collected posts
-    * **avg_comments**
-        >Average number of Comments, based on the collected posts
-    * **avg_engagement**
-        >Average er_comments_post, based on the collected posts
-    * **avg_days_between_posts**
-        >Average upload frequency of the account, based on the collected posts
+Collecting and storing the data | Data collection methods
+----------------------------------------
 
+#### Next step:
+* Collection and storage of the desirable data
 
-In order to handle Instagram's tactic that divides the posts of each account at subsections of 12 posts, the collection of the fields mentioned above was completed via two methods:
-* **parse()**
-    >Handles the first 12 posts of each account
-* **parse_pages()**
-    >Handles the next dozens of posts of each account
+#### Available methods:
+* Manual data collection
+* Usage of APIs
+* Web Scraping
+* Questionnaire
 
+>All the above methods were used during the collection of the data
 
-As soon as all the necessary fields have been collected, they are being grouped and stored as documents in the MongoDB database, using the file "pipelines.py". The structure of each document is declared in the "items.py" file and it is as follows:
-* **personal_info**
-    >An object containing all the collected general information of an account mentioned above
-* **tagged_users**
-    >An object containing all the unique users that have been mentioned in the collected posts of an account
-* **hashtags**
-    >An object containing all the unique hashtags that have been mentioned in the collected posts of an account
-* **user_posts**
-    >An array containing the fields of all the collected posts of an account 
+#### Challenges:
+* Time consuming manual data collection
+* Difficulty of using the provided Instagram API
+* Complex source code of YouTube
+* Inability to collect interesting but private information
 
-How to Use
----------------------------
-1. Download the project
-2. Open the file "instagram_spider.py" that is located in the folder "spiders"
-3. Update the variable "request_header", based on the request headers that your browser sends to Instagram
-    >This field can be found selecting one of the sent requests in the section "Network", while inspecting an Instagram account
-4. Update the variable "mozilla_cookies", based on the "Cookies" field that your browser attaches to the sent requests
-    >This field can be found selecting one of the sent requests in the section "Network", while inspecting an Instagram account
-5. Comment/Uncomment one of the provided methods to populate the list "users_to_scrape"
-    >Import names from file or database
-6. Open the file "pipelines.py"
-7. Upload the variables "myclient", "db" and "collection", based on the address of your database
-8. Open the file "documents_exporter.py", located in the folder "tools"
-9. Upload the variables "myclient", "db" and "collection", based on the address of your database
-10. Open Command Line
-11. **cd** to the path of the project
-12. Run:
-```
-scrapy crawl InstagramSpider
-```
+#### Therefore, the steps that we followed are:
+1. Collection and storage of popular greek content creators' credentials, implementing web scraping on the websites www.starngage.com and www.stats.video
+2. Manual collection and storage of greek businesses' credentials  
+3. Collection and storage of the desirable data from each Instagram profile, implementing web scraping
+4. Collection and storage of the desirable data from each YouTube channel, using YouTube Data API
+5. Collection and storage of additional information, conducting a questionnaire
+
+Collecting and storing the data | Tools
+----------------------------------------
+1. Data Collection
+    * Scrapy Framework
+    * YouTube Data API
+    * Google Forms
+3. Data Storage
+    * mongoDB
+    * mongoDB Compass
+    * mongoDB Atlas
+    * mongoDB Charts
+
+Collecting and storing the data | Collection of Instagram and YouTube data
+---------------------------------------
+#### Instagram data collection | requirements
+* Use of Scrapy
+* Parallel handling of multiple profiles
+* Data extraction from the source code of the platform
+* Handling of the pagination of the platform
+* Avoidance of being banned, due to anti-scraping mechanisms
+    * human behavior simulation (used)
+    * use of User Agents
+    * HTTP requests analysis (used)
+    * dynamic IP address rotation
+* Grouping of data in sets and storage
+* Frequent code maintenance
+* Manual listing of the category of each profile
+    * Male
+    * Female
+    * Other
+    * Business
