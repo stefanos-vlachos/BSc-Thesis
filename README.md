@@ -192,7 +192,7 @@ Collecting and storing the data | Tools
 
 Collecting and storing the data | Collection of Instagram and YouTube data
 ---------------------------------------
-#### Instagram data collection | requirements
+#### Instagram data collection | Requirements
 * Use of Scrapy
 * Parallel handling of multiple profiles
 * Data extraction from the source code of the platform
@@ -205,7 +205,26 @@ Collecting and storing the data | Collection of Instagram and YouTube data
 * Grouping of data in sets and storage
 * Frequent code maintenance
 * Manual listing of the category of each profile
-    * Male
-    * Female
-    * Other
-    * Business
+    * Male (784 profiles)
+    * Female (926 profiles)
+    * Other (767 profiles)
+    * Business (249 profiles)
+
+#### Instagram data collection | Code
+The scraping mechanism that we developed in order to collect data from Instagran can be found at https://github.com/stefanos-vlachos/Instagram_Scrapy_Scraper.
+
+#### YouTube data collection | Requirements
+* Communication between Scrapy and YouTube Data API
+* Use of multiple API keys
+* Parellel handling of multiple profiles
+* Handling of the pagination of the platform
+* Special handling of videos that keep various fields private
+* Grouping of data in sets and storage
+* Manual listing of the category of each profile
+    * Male (782 profiles)
+    * Female (318 profiles)
+    * Other (654 profiles)
+    * Business (303 profiles)
+
+#### YouTube data collection | Code
+The scraping mechanism that we developed in order to collect data from YouTube can be found at https://github.com/stefanos-vlachos/Youtube_Scrapy_Scraper.
