@@ -228,3 +228,242 @@ The scraping mechanism that we developed in order to collect data from Instagran
 
 #### YouTube data collection | Code
 The scraping mechanism that we developed in order to collect data from YouTube can be found at https://github.com/stefanos-vlachos/Youtube_Scrapy_Scraper.
+
+Collecting and storing the data | Questionnaire
+-------------------------------------
+
+#### Need for:
+* Collection of data that could not be retireved from the social media platforms
+* Assessment of representativity of the already collected data
+
+#### Conduction of a questionnaire:
+* **Aim** | Assessment of representativity and augmentation of the drawn conclusions
+* **Tool** | Google forms
+* **Target Group** | People from a broad age and social range
+
+Study of the collected data and final results | Introduction
+-----------------------------
+
+#### Goals
+* Conclusions about the digital behavior and the preferences of the Greek Instagram community
+* Conclusions about the digital behavior and the preferences of the Greek YouTube community
+* Factors that affect the performance of the publicized posts
+* Activity of Greek bussinesses on social media
+* Impact of COVID-19 on social media
+
+#### Challenges
+* Effective time management
+* Large volume of data
+* Handling of outliers
+* Objective approach to the data
+* Consolidation of the drawn conclusions
+
+#### Steps
+1. Creation of charts and drawing of conclusions about Instagran, using MongoDB Charts
+2. Creation of charts and drawing of conclusions about YouTube, using MongoDB Charts
+3. Creation of charts and drawing of conclusions, studying the answers to our questionnaire via Google Forms
+4. Cross-checking of all the above conclusions
+
+> Uilisation of post and profile hashtags playd a crucial role at drawing the final conclusions.
+
+Study of the collected data and final results | Secondary variables
+-----------------------------
+* Variables that resulted as a function of already collected data
+* Helped at the detection of complex correlations
+* Helped at the more accurate representation of the performance of a post
+* Helped at detecting the outliers
+
+#### Secondary variables | Instagram:
+* Engagement Rate Post
+* Engagement Rate Comments Post
+* Engagement Rate Views
+* Average days betwwen posts
+
+> For a more detailed description of the secondary variables regarding Instagram, you can visit https://github.com/stefanos-vlachos/Instagram_Scrapy_Scraper
+
+#### Secondary variables | YouTube:
+* Video Dislikes Ratio
+* Video Engagement
+* Views Subscribers Ratio
+
+> For a more detailed description of the secondary variables regarding Youtube, you can visit https://github.com/stefanos-vlachos/Youtube_Scrapy_Scraper
+
+Study of the collected data and final results | Conclusions about Instagram
+-----------------------------
+
+#### General Conclusions
+* It is a platform with a pure social networking foundation
+* Photographs play the principal role of the platform
+* Better establishment in younger ages
+* Increasing influence on users from a broad age range
+* High frequency of creating and consuming content
+
+#### Impact of different account categories
+* Particular interest for female creators
+* Enhanced engagement between audience and personalized accounts, in contrast with business and other accounts
+* Strict and professional character of business accounts
+* Male users tend to follow more accounts beside the other account categories
+
+#### Productivity
+* Principal role of business accounts and female creators
+* Less productive male creators
+* High activity of male and female users during the summer months
+* Prosperity of:
+    * lifestyle (males, females)
+    * traveling (males)
+    * fashion/beauty (females)
+* "Other" type accounts produced more content related to:
+    * traveling
+    * arts
+    * entertainment
+
+#### Impact of different content types
+* Wide interest in:
+    * lifestyle/publicization of daily, personal moments
+    * traveling
+    * arts
+    * entertainment
+* Males are also interested in:
+    * sports
+    * tenchnology and science
+* Females are also interested in:
+    * fashion/beauty
+    * cooking
+* High impact of Giveaways
+    * organised by numerous creators of different age and interests
+    * engagement of users from a wide age range
+
+Study of the collected data and final results | Conclusions about YouTube
+-----------------------------
+#### General Conclusions
+* The publicization and watch of videos plays the principal role of the platform
+* Gradula adoption of modern social media characteristics, like stories 
+* Big establishment in the Greek community, due to its multiannual presence
+* Better establishment of the modernisation of the platform in the younger ages
+* Lower frequency of content creation and consumption, compared to Instagram
+
+#### Impact of different channel categories
+* Higher activity of male creators and "Other" channels
+* Female creators aim at a less wide audience
+* Low and often negative engagement between the audience and the business channels
+* Enhanced engagement between audience and personalized channels, in contrast with businesses and "Other" channels
+* Enhanced engagement between audience and newly established channels
+
+#### Productivity
+* Principal role of male creators and "Other" channels
+* Increase in creators' productivity during 2020
+* Low frequency of content production during the summer months
+* Prosperity of:
+    * gaming
+    * music
+    * entertainment
+    * comedy
+    * news and politics
+    > The last 3 categories reported a remarkable increase in productivity during 2020
+* Tendency of male creators and "Other" channels towards:
+    * gaming
+    * music
+    * comedy
+* Tendency of female creators towards:
+    * lifestyle
+    * fashion/beauty
+    * cooking
+* Various content categories created by business channels, such as:
+    * comedy
+    * gaming
+    * fitness
+    * technology and science
+   
+#### Impact of different content types
+* Wide interest in:
+    * gaming
+    * comedy
+    * entertainment
+    * arts
+    * educational content
+* Audience's warm relationship with:
+    * gaming
+    * fashion/beauty
+    * pets and animals
+* Low and often negative engagement between the audience and :
+    * news and politics
+* Modern trends:
+    * entertainment
+    * gaming
+    * people and blogs
+* Growth dynamics of:
+    * music
+    * science and technology
+    * sports
+    * fashion/beauty
+* Males are more interested in:
+    * gaming
+    * sports
+* Females are more interested in:
+    * lifestyle
+    * fashion/beauty
+    * cooking
+* High impact of Giveaways
+* High impact of videos that require the audience's active participation, like QnAs, Challenges or "We read your comments..." type videos
+* High impact of videos that show the daily routine of a creator, like Vlogs
+
+Study of the collected data and final results | More general observations
+-----------------------------
+* Bigger use of social media from younger users:
+    * older users: more purposeful use of social media
+    * younger users: use of social media without a strictly defined purpose
+* Higher engagement between the audience and content during the summer and Christmas
+* The performance of the posts seemed to benefit from:
+    * the use of hashtags
+    * the collaboration of creators
+    * the sharing of the content by the audience
+* Prefernce of the audience for milder frequencies of uploading content
+
+Study of the collected data and final results | Business sector and influencer marketing
+---------------------
+#### General
+* Activity of numerous businesses on social media
+* Instagram provides a fruitful ground for developing trade relations
+* Remarkable but lower activity of businesses on YouTube
+* Businesses have not succeeded to develop a warm relationship with the audience through social media
+* Common tactics:
+    * Strict and professional character of bussiness accounts
+    * High activity during holiday seasons, celebrations and anniversaries
+    * Promotion via in person advertising or influencer marketing
+
+#### In person advertising
+* Less fruitfull tactic
+* Low engagement between the audience and the advertised product
+* Higher tolerance of the Instagram community for advertisements
+* Bigger establishment of advertisements in older ages
+
+#### Influencer marketing
+* More fruitfull tactic
+* Businesses turn to popular content creators to promote their products
+* Very high engagement rate between the audience and posts that contain the promotion of a product by an influencer
+* Bigger establishment of influencer marketing in younger ages
+
+#### Businesses orientation
+* Businesses on Instagram:
+    * ususally turn to female creators in order to be promoted
+    * are highly active in the sectors of fashion and beauty
+    * aim to users from a wide age range 
+    
+* Businesses on YouTube:
+    * ususally turn to male creators in order to be promoted
+    * are highly active in the sectors of gaming, science, technology, fashion/beauty, and traveling
+    * aim to younger users
+  
+Study of the collected data and final results | COVID-19
+-----------------------
+* Direct impact on the Greek social media users' psychology
+* People turnt to social media during the pandemic
+* Numerous hashtags related to the pandemic were widely used
+* The first wave of COVID-19 seemed to have affected the greek community in a larger extend than the second one
+* There was an important increase in the productivity of YouTube videos during the pandemic
+* Businesses and "Other" accounts boosted their digital presence on social media
+* Many content categories reported notable growth:
+    * gaming
+    * entertainment
+    * comedy
+    * news & politics
