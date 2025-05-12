@@ -1,4 +1,4 @@
-# University_Thesis
+# BSc-Thesis
 From digital footprints to facts: mining social data for marketing practices
 ============================================================================
 
